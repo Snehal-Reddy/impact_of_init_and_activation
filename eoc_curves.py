@@ -63,7 +63,7 @@ eoc = get_eoc(activation, activation_dash, sigma_b)
 
 def beta_q(sigma_bs, act, act_dash, act_sec):
     q_s = get_eoc(act, act_dash, sigma_bs)
-    return [(sigma_b, q * np.mean(act_sec(np.sqrt(q)*z1)**2)/ np.mean(act_dash(np.sqrt(q)*z1)**2) / 2) for (sigma_n, q) in zip(sigma_bs, q_s)]
+    return [(sigma_b, q[2] * np.mean(act_sec(np.sqrt(q[2])*z1)**2)/ np.mean(act_dash(np.sqrt(q[2])*z1)**2) / 2) for (sigma_b, q) in zip(sigma_bs, q_s)]
 
 
 
